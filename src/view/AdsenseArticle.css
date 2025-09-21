@@ -1,0 +1,240 @@
+
+body {
+    background-color: #f8f9fa; 
+}
+
+.article-page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Artikel */
+.article-site-header {
+    background-color: #ffffff;
+    padding: 15px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.article-site-header h1 {
+    font-family: 'Merriweather', serif;
+    font-size: 1.8em;
+    color: #333;
+    margin: 0;
+}
+
+/* Konten Utama */
+.main-article-content {
+    max-width: 800px; 
+    margin: 30px auto;
+    padding: 20px 20px 40px;
+    background-color: #ffffff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    flex-grow: 1;
+}
+
+.article-title {
+    font-family: 'Merriweather', serif;
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.article-meta {
+    font-size: 0.9em;
+    color: #888;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    gap: 20px;
+}
+
+.article-meta svg {
+    margin-right: 5px;
+}
+
+.lead-paragraph {
+    font-size: 1.15em;
+    font-weight: 400;
+    color: #333;
+    margin-bottom: 25px;
+}
+
+.section-title {
+    font-size: 1.8em;
+    color: #2c3e50;
+    margin-top: 40px;
+    margin-bottom: 15px;
+    border-left: 4px solid #3498db;
+    padding-left: 15px;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+figure {
+    margin: 30px 0;
+    text-align: center;
+}
+
+figure img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+figcaption {
+    font-size: 0.85em;
+    color: #999;
+    margin-top: 10px;
+}
+
+ul {
+    padding-left: 30px;
+    margin-bottom: 25px;
+}
+
+.ads-slot {
+    text-align: center;
+    margin: 40px 0; 
+    padding: 15px;
+    background-color: #f1f1f1; 
+    border: 1px dashed #ccc; 
+    min-height: 120px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9em;
+    color: #777;
+    border-radius: 4px;
+}
+
+.call-to-action-article {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.cta-article-btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #e74c3c; 
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.cta-article-btn:hover {
+    background-color: #c0392b;
+}
+
+.article-site-footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #ccc;
+    font-size: 0.85em;
+    margin-top: auto;
+}
+
+@media (max-width: 768px) {
+    .main-article-content {
+        padding: 15px 10px;
+        margin: 10px auto;
+        box-shadow: none;
+    }
+    .article-title {
+        font-size: 2em;
+    }
+    .ads-slot {
+        margin: 30px 0;
+    }
+}
+
+.article-navbar {
+    background-color: #34495e; 
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky; 
+    top: 0;
+    z-index: 1000; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-logo a {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    font-family: 'Merriweather', serif;
+}
+
+.navbar-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-links li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 0.95em;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s;
+}
+
+.navbar-links li a:hover {
+    color: #3498db;
+}
+
+.navbar-links li a svg {
+    margin-right: 5px;
+}
+
+@media (max-width: 768px) {
+    .article-navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .navbar-links {
+        margin-top: 10px;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        padding-top: 10px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+}
+
+.sub-section-title {
+    font-size: 1.4em;
+    color: #3498db; 
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.section-title {
+    font-size: 1.8em;
+    color: #2c3e50;
+    margin-top: 40px;
+    margin-bottom: 15px;
+    border-left: 4px solid #e74c3c;
+    padding-left: 15px;
+}
