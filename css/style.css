@@ -1,0 +1,326 @@
+/* ===========================
+   CUSTOM STYLES
+   Portfolio Satria Chandra
+   =========================== */
+
+/* Noise texture overlay */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 128px 128px;
+  pointer-events: none;
+}
+
+.dark .noise-overlay {
+  opacity: 0.04;
+}
+
+/* Dot pattern */
+.dot-pattern {
+  background-image: radial-gradient(circle, #94a3b8 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Blinking cursor */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* Smooth scroll override for sections */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+/* Navbar glassmorphism on scroll */
+#navbar.scrolled {
+  background: rgba(240, 249, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(186, 230, 253, 0.3);
+}
+
+.dark #navbar.scrolled {
+  background: rgba(12, 18, 34, 0.9);
+  border-bottom: 1px solid rgba(51, 65, 85, 0.5);
+}
+
+/* Nav link active state */
+.nav-link.active {
+  color: #0ea5e9;
+}
+
+/* Skill card subtle gradient on hover */
+.skill-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 1rem;
+  opacity: 0;
+  transition: opacity 0.3s;
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.skill-card {
+  position: relative;
+}
+
+.skill-card:hover::before {
+  opacity: 1;
+}
+
+/* Project card image zoom on hover */
+.project-card:hover .h-44 {
+  filter: brightness(1.05);
+}
+
+.project-card .h-44 {
+  transition: filter 0.3s;
+}
+
+/* Contact card subtle glow */
+.contact-card:hover {
+  box-shadow: 0 0 30px rgba(56, 189, 248, 0.08);
+}
+
+/* Selection color */
+::selection {
+  background-color: rgba(56, 189, 248, 0.25);
+  color: #0c4a6e;
+}
+
+.dark ::selection {
+  background-color: rgba(56, 189, 248, 0.3);
+  color: #e0f2fe;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #bae6fd;
+  border-radius: 3px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #1e293b;
+}
+
+/* Typed.js container */
+#typed-output {
+  display: inline;
+}
+
+/* Fade in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Stagger delays */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #0ea5e9, #38bdf8, #7dd3fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Mobile menu animation */
+#mobile-menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+  opacity: 0;
+}
+
+#mobile-menu.open {
+  max-height: 400px;
+  opacity: 1;
+}
+
+/* Hamburger to X animation */
+#mobile-menu-btn .menu-icon {
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+#mobile-menu-btn .close-icon {
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+#mobile-menu-btn.active .menu-icon {
+  transform: scale(0) rotate(90deg);
+  opacity: 0;
+}
+
+#mobile-menu-btn.active .close-icon {
+  transform: scale(1) rotate(0deg);
+  opacity: 1;
+}
+
+/* Prevent layout shift during dark mode transition */
+* {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-duration: 0ms;
+}
+
+html.dark-transition * {
+  transition-duration: 300ms !important;
+}
+
+/* Button active state */
+a:active, button:active {
+  transform: scale(0.98);
+}
+
+/* Image placeholder styling */
+img[onerror] {
+  background: linear-gradient(135deg, #e0f2fe, #bae6fd);
+}
+
+.dark img[onerror] {
+  background: linear-gradient(135deg, #0c4a6e, #075985);
+}
+
+/* ===========================
+   RESPONSIVE IMPROVEMENTS
+   =========================== */
+
+/* Very small screens (320px and below) */
+@media (max-width: 360px) {
+  .font-heading {
+    letter-spacing: -0.01em;
+  }
+  
+  /* Reduce padding on very small screens */
+  section {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  /* Smaller hero title on tiny screens */
+  #hero h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+  
+  /* Adjust hero buttons for tiny screens */
+  #hero .flex a {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.875rem;
+  }
+}
+
+/* Mobile touch targets - ensure minimum 44px */
+@media (max-width: 768px) {
+  /* Nav links in mobile menu */
+  .mobile-nav-link {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0;
+  }
+  
+  /* Theme toggle mobile */
+  #theme-toggle-mobile {
+    min-height: 44px;
+  }
+  
+  /* Contact cards touch area */
+  .contact-card {
+    min-height: 44px;
+  }
+  
+  /* Project card links */
+  .project-card a {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 0;
+  }
+}
+
+/* Tablet adjustments */
+@media (min-width: 640px) and (max-width: 768px) {
+  /* Slightly larger spacing on tablet */
+  .max-w-5xl {
+    max-width: 48rem;
+  }
+}
+
+/* Desktop large screens */
+@media (min-width: 1280px) {
+  /* Wider max-width on large screens */
+  .max-w-5xl {
+    max-width: 64rem;
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+  
+  .animate-blink {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+/* Print styles */
+@media print {
+  .noise-overlay,
+  #navbar,
+  .animate-blink {
+    display: none !important;
+  }
+  
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  
+  section {
+    page-break-inside: avoid;
+  }
+}
